@@ -40,3 +40,7 @@ Route::get('/rota1', function(){
 Route::get('/rota2', function(){
     return redirect()->route('site.rota1');
 });
+
+Route::fallback(function(){
+    echo 'Página inexistente. <a href="'.route('site.index').'">Clique aqui</a> para voltar.';
+});
