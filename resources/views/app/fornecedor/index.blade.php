@@ -15,3 +15,8 @@
 @else
     <h3>Ainda não existem Fornecedores</h3>
 @endif
+
+{{-- Entra na condicional se for falso(contrário do if) --}}
+@unless ($fornecedores[0]['status'] == 'S')
+    <h3>Fornecedor Inativo</h3>
+@endunless
