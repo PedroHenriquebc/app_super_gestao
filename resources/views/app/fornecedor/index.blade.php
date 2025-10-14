@@ -29,6 +29,12 @@
     @isset($fornecedores[0]['cnpj'])
         CNPJ: {{ $fornecedores[0]['cnpj'] }}    
     @endisset
-    
+@endisset
 
+@isset($outros_fornecedores)
+    @if(@empty($outros_fornecedores))
+        <h3>Não existem outros fornecedores</h3>
+    @else
+        <h3>Existem outros fornecedores</h3>
+    @endif
 @endisset
