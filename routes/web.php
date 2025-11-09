@@ -19,7 +19,7 @@ use App\Http\Controllers\FornecedorController;
 */
 
 Route::get('/', [PrincipalController::class, 'principal'])->name('site.index');
-Route::get('contato', [ContatoController::class, 'contato'])->name('site.conato');
+Route::get('contato', [ContatoController::class, 'contato'])->name('site.contato');
 Route::get('sobre-nos', [SobreNosController::class, 'sobreNos'])->name('site.sobrenos');
 Route::get('login', function(){return 'Login';})->name('site.login');
 
