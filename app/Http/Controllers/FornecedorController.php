@@ -23,7 +23,8 @@ class FornecedorController extends Controller
             'cnpj' => '00.000.000/000-00'
             ]];
 
-
+        echo isset($fornecedores[1]['cnpj']) ? "CNPJ existente" : "CNPJ inexistente";
+        
         return view('app.fornecedor.index', compact('fornecedores', 'outros_fornecedores'));
     }
 }
