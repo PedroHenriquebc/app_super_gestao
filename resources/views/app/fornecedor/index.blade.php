@@ -31,6 +31,23 @@
     @endisset --}}
 
     CNPJ: {{ $fornecedores[1]['cnpj'] ?? 'Valor Não Preenchido' }}
+    <br>
+    Telefone: ({{ $fornecedores[1]['ddd'] ?? '' }}) {{ $fornecedores[1]['telefone'] ?? '' }}
+    <br>
+    @switch($fornecedores[1]['ddd'])
+        @case('81')
+            Pernambuco - PE
+            @break
+        @case('11')
+            São Paulo - SP
+            @break
+        @case('85')
+            Ceará - CE
+            @break
+        @default
+            Estado não identificado
+    @endswitch
+
 
 @endisset
 
