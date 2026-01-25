@@ -18,13 +18,13 @@
     @endif
 
     {{-- Entra na condicional se for falso(contrário do if) --}}
-    @unless ($fornecedores[0]['status'] == 'S')
+    @unless ($fornecedores[1]['status'] == 'S')
         <h3>Fornecedor Inativo</h3>
     @endunless
 
-    Fornecedor: {{ $fornecedores[0]['nome'] }}
+    Fornecedor: {{ $fornecedores[1]['nome'] }}
     <br>
-    Status: {{ $fornecedores[0]['status'] }}
+    Status: {{ $fornecedores[1]['status'] }}
     <br>
     {{-- @isset($fornecedores[0]['cnpj'])
         CNPJ: {{ $fornecedores[0]['cnpj'] }}    
