@@ -22,22 +22,17 @@
     @endfor --}}
 
 
-    @php
-        $i = 0;
-    @endphp
-    @while ($i < count($fornecedores))
-        Fornecedor: {{ $fornecedores[$i]['nome'] }}
+    @foreach ($fornecedores as $indice =>  $fornecedor)
+        Fornecedor: {{ $fornecedor['nome'] }}
         <br>
-        Status: {{ $fornecedores[$i]['status'] }}
+        Status: {{ $fornecedor['status'] }}
         <br>
-        CNPJ:  {{ $fornecedores[$i]['cnpj'] ?? 'CNPJ não informado'}}
+        CNPJ:  {{ $fornecedor['cnpj'] ?? 'CNPJ não informado'}}
         <br>
-        Telefone: {{ $fornecedores[$i]['telefone'] ?? 'Telefone não informado'}}
+        Telefone: {{ $fornecedor['telefone'] ?? 'Telefone não informado'}}
         <br>
-        <br>
-        @php
-            $i++;
-        @endphp
-    @endwhile
+        <hr>
+    @endforeach
+    
 
 @endisset
