@@ -9,7 +9,7 @@
 @endphp
 
 @isset($fornecedores)
-    @for ($i = 0; $i < count($fornecedores); $i++)
+    {{-- @for ($i = 0; $i < count($fornecedores); $i++)
         Fornecedor: {{ $fornecedores[$i]['nome'] }}
         <br>
         Status: {{ $fornecedores[$i]['status'] }}
@@ -19,6 +19,25 @@
         Telefone: {{ $fornecedores[$i]['telefone'] ?? 'Telefone não informado'}}
         <br>
         <br>
-    @endfor
+    @endfor --}}
+
+
+    @php
+        $i = 0;
+    @endphp
+    @while ($i < count($fornecedores))
+        Fornecedor: {{ $fornecedores[$i]['nome'] }}
+        <br>
+        Status: {{ $fornecedores[$i]['status'] }}
+        <br>
+        CNPJ:  {{ $fornecedores[$i]['cnpj'] ?? 'CNPJ não informado'}}
+        <br>
+        Telefone: {{ $fornecedores[$i]['telefone'] ?? 'Telefone não informado'}}
+        <br>
+        <br>
+        @php
+            $i++;
+        @endphp
+    @endwhile
 
 @endisset
