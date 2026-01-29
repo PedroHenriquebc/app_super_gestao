@@ -22,7 +22,7 @@
     @endfor --}}
 
 
-    @foreach ($fornecedores as $indice =>  $fornecedor)
+    @forelse ($fornecedores as $indice =>  $fornecedor)
         Fornecedor: {{ $fornecedor['nome'] }}
         <br>
         Status: {{ $fornecedor['status'] }}
@@ -32,7 +32,9 @@
         Telefone: {{ $fornecedor['telefone'] ?? 'Telefone não informado'}}
         <br>
         <hr>
-    @endforeach
+    @empty
+        Não existem fornecedores!
+    @endforelse
     
 
 @endisset
